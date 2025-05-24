@@ -1,0 +1,43 @@
+{
+  "name": "overtime-allocation-app",
+  "version": "1.0.0",
+  "description": "Desktop application for overtime allocation",
+  "main": "main.js",
+  "scripts": {
+    "start": "unset DBUS_SESSION_BUS_ADDRESS && xvfb-run --auto-servernum --server-args=\"-screen 0 1366x768x24\" electron . --disable-gpu --no-sandbox --disable-dev-shm-usage --enable-logging --v=1",
+    "dist": "electron-builder --win --x64",
+    "pack": "electron-builder --dir"
+  },
+  "keywords": [
+    "Overtime",
+    "Electron"
+  ],
+  "author": "Your Name/Company",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^28.0.0",
+    "electron-builder": "^24.9.1"
+  },
+  "build": {
+    "appId": "com.example.overtimeapp",
+    "productName": "Overtime Allocation System",
+    "files": [
+      "main.js",
+      "preload.js",
+      "index.html",
+      "css/",
+      "js/",
+      "resources/"
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "resources/app_icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
+    }
+  }
+}
