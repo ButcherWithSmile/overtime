@@ -1,0 +1,223 @@
+/* css/style.css */
+@font-face {
+    font-family: 'Fara';
+    src: url('../resources/Fara-Light.otf') format('opentype');
+    font-weight: 300;
+    /* Light */
+    font-style: normal;
+}
+
+body {
+    font-family: 'Fara', Tahoma, Arial, sans-serif;
+    font-size: 14px;
+    background-color: #2D2D30;
+    /* رنگ پس‌زمینه اصلی از PyQt */
+    color: #E6E6E6;
+    /* رنگ متن اصلی از PyQt */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    /* محتوا از بالا شروع شود */
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+#app-container {
+    width: 100%;
+    max-width: 1300px;
+    /* مشابه عرض پنجره PyQt */
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+/* استایل‌های عمومی برای دکمه‌ها، ورودی‌ها و غیره در آینده اضافه خواهند شد */
+button {
+    font-family: 'Fara', Tahoma, Arial, sans-serif;
+    background-color: #0A7BFF;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    min-width: 100px;
+}
+
+button:hover {
+    background-color: #1C86FF;
+}
+
+button:disabled {
+    background-color: #555;
+    color: #aaa;
+    cursor: not-allowed;
+}
+
+input[type="text"],
+input[type="password"],
+select {
+    font-family: 'Fara', Tahoma, Arial, sans-serif;
+    background-color: #333337;
+    color: #E6E6E6;
+    padding: 8px;
+    /* افزایش padding برای خوانایی بهتر */
+    border: 1px solid #3E3E42;
+    border-radius: 3px;
+    min-width: 200px;
+    /* حداقل عرض */
+    box-sizing: border-box;
+    height: 35px;
+    /* مشابه ارتفاع در PyQt */
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+select:focus {
+    border: 1px solid #0A7BFF;
+    outline: none;
+}
+
+/* کلاس‌های کمکی */
+.hidden {
+    display: none !important;
+}
+
+/* css/style.css */
+/* ... (استایل‌های قبلی body, #app-container, button, input, .hidden) ... */
+
+.login-dialog {
+    background-color: #2D2D30;
+    /* همان رنگ پس‌زمینه اصلی */
+    padding: 30px;
+    border-radius: 8px;
+    /* کمی گردتر از QGroupBox */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 500px;
+    /* عرض مشابه دیالوگ PyQt */
+    margin: 50px auto;
+    /* برای قرارگیری در مرکز با کمی فاصله از بالا */
+    text-align: right;
+}
+
+.login-title {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.6em;
+    /* 16pt در PyQt */
+    font-weight: bold;
+    color: #E6E6E6;
+}
+
+.login-form-group {
+    border: 1px solid #3E3E42;
+    /* مشابه QGroupBox */
+    border-radius: 5px;
+    margin-top: 10px;
+    padding: 20px;
+    position: relative;
+    /* برای عنوان گروه */
+}
+
+.form-group-title {
+    font-weight: bold;
+    color: #E6E6E6;
+    background-color: #2D2D30;
+    /* برای پوشاندن بوردر */
+    padding: 0 10px;
+    position: absolute;
+    top: -12px;
+    /* تنظیم برای قرارگیری روی بوردر */
+    right: 15px;
+    /* تنظیم از سمت راست */
+    font-size: 1.1em;
+}
+
+.form-row {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    /* لیبل بالای اینپوت */
+}
+
+.form-row label {
+    margin-bottom: 5px;
+    font-size: 0.95em;
+}
+
+.form-row input[type="text"],
+.form-row input[type="password"] {
+    width: 100%;
+    /* تمام عرض والد */
+    min-height: 35px;
+    /* مشابه PyQt */
+}
+
+.form-row button {
+    width: 100%;
+    min-height: 40px;
+    /* مشابه PyQt */
+    font-size: 1.1em;
+}
+
+.remember-me-row {
+    flex-direction: row;
+    /* چک‌باکس و لیبل در یک ردیف */
+    align-items: center;
+    justify-content: flex-end;
+    /* هم‌راستا با سایر فرم */
+}
+
+.remember-me-row input[type="checkbox"] {
+    margin-left: 8px;
+    /* فاصله بین چک‌باکس و لیبل */
+    width: 15px;
+    height: 15px;
+    accent-color: #0A7BFF;
+    /* رنگ تیک چک‌باکس */
+}
+
+.checkbox-label {
+    font-size: 0.9em;
+    user-select: none;
+    /* جلوگیری از انتخاب متن لیبل */
+    cursor: pointer;
+}
+
+
+.login-help-text {
+    text-align: center;
+    color: #888888;
+    margin-top: 20px;
+    font-size: 0.9em;
+}
+
+.login-message {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 4px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.login-message.info {
+    background-color: #333337;
+    /* رنگ ملایم برای اطلاعات */
+    color: #E6E6E6;
+}
+
+.login-message.success {
+    background-color: #388E3C;
+    /* سبز برای موفقیت */
+    color: #C8E6C9;
+}
+
+.login-message.error {
+    background-color: #D32F2F;
+    /* قرمز برای خطا */
+    color: #FFCDD2;
+}
